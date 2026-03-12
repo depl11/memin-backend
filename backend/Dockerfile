@@ -1,5 +1,5 @@
 # Build stage
-FROM openjdk:22-jdk-slim AS build
+FROM eclipse-temurin:22-jdk-jammy AS build
 
 WORKDIR /app
 
@@ -18,7 +18,7 @@ COPY src ./src
 RUN ./mvnw clean package -DskipTests -Dhttps.protocols=TLSv1.2
 
 # Runtime stage
-FROM openjdk:22-slim
+FROM eclipse-temurin:22-jre-jammy
 
 WORKDIR /app
 
