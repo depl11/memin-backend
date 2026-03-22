@@ -64,20 +64,20 @@ INSERT INTO meetings (committee_id, meeting_title,
                       created_by, updated_by, created_date, updated_date, uuid)
 VALUES
     -- meetings for committee 1
-    (1, 'Syllabus Update Discussion', '2025-07-18', 'Pulchowk Campus', '14:30:00', 'username', 'username', '2025-07-13',
-     '2025-07-13', UUID()),
-    (1, 'Annual Seminar Planning', '2025-07-22', 'Auditorium', '11:00:00', 'username', 'username', '2025-07-14',
-     '2025-07-14', UUID()),
-    (1, 'Research Grant Proposals Review', '2025-07-25', 'Innovation Hub', '13:00:00', 'username', 'username',
-     '2025-07-21', '2025-07-21', UUID()),
-    (1, 'Review of Recent Incidents', '2025-07-28', 'Admin Office 1', '10:00:00', 'username', 'username', '2025-07-22',
-     '2025-07-22', UUID()),
+    (1, 'Syllabus Update Discussion', '2026-02-22', 'Pulchowk Campus', '14:30:00', 'username', 'username', '2025-07-13',
+     '2026-04-13', UUID()),
+    (1, 'Annual Seminar Planning', '2026-02-22', 'Auditorium', '11:00:00', 'username', 'username', '2025-07-14',
+     '2026-03-14', UUID()),
+    (1, 'Research Grant Proposals Review', '2026-03-25', 'Innovation Hub', '13:00:00', 'username', 'username',
+     '2026-02-21', '2025-07-21', UUID()),
+    (1, 'Review of Recent Incidents', '2026-04-28', 'Admin Office 1', '10:00:00', 'username', 'username', '2025-07-22',
+     '2026-01-22', UUID()),
 
     -- meetings for committee 2
     (2, 'Canteen and Hostel Feedback Session', '2025-07-29', 'Student Lounge', '15:00:00', 'username', 'username',
-     '2025-07-23', '2025-07-23', UUID()),
+     '2026-02-23', '2025-07-23', UUID()),
     (2, 'Campus Wi-Fi Upgrade Plan', '2025-08-01', 'IT Department', '11:00:00', 'username', 'username', '2025-07-25',
-     '2025-07-25', UUID());
+     '2026-01-25', UUID());
 
 -- Insert Decisions
 INSERT INTO decisions (meeting_id, decision, uuid, decision_created_by, decision_created_date, decision_modified_by, decision_modified_date)

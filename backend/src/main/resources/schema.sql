@@ -20,6 +20,7 @@ CREATE TABLE members (
 
                          member_post VARCHAR(255),
                          member_title VARCHAR(255) NOT NULL,
+                         member_institution VARCHAR(255),
 
                          member_created_by VARCHAR(255) NOT NULL,
                          member_created_date DATE NOT NULL,

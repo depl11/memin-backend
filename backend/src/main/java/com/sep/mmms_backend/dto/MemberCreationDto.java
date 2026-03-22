@@ -19,4 +19,5 @@ public class MemberCreationDto {
 
     private String post;  //example: IMO Cheif, Campus Chief
 
+    private String institution;
 }

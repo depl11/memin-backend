@@ -19,6 +19,6 @@ public class CommitteeOverviewDto {
     private String coordinatorName;
     private LocalDate firstMeetingDate;
     private LocalDate lastMeetingDate;
-    private List<LocalDate> meetingDates;
+    private List<DateAndMeetingIdsDto> meetings;
     private MinuteLanguage language;
 }

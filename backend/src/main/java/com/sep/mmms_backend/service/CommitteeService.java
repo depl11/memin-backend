@@ -181,14 +181,31 @@ public class CommitteeService {
         committeeOverview.setCoordinatorName(committee.getCoordinator().getFirstName() + " " + committee.getCoordinator().getLastName());
 
         if (!committee.getMeetings().isEmpty()) {
+            Map<LocalDate, List<Meeting>> dateAndMeetingIdMap = new HashMap<>();
+
+            for(Meeting meeting: committee.getMeetings()) {
+                if(dateAndMeetingIdMap.containsKey(meeting.getHeldDate())) {
+                    dateAndMeetingIdMap.get(meeting.getHeldDate()).add(meeting);
+                } else {
+                    List<Meeting> meets  = new ArrayList<Meeting>();
+                    meets.add(meeting);
+                    dateAndMeetingIdMap.put(meeting.getHeldDate(), meets);
+                }
+            }
+
             List<LocalDate> meetingDates = committee.getMeetings().stream().map(Meeting::getHeldDate).collect(Collectors.toList());
+
 
             Comparator<LocalDate> comparator = LocalDate::compareTo;
             meetingDates.sort(comparator);
 
             committeeOverview.setFirstMeetingDate(meetingDates.getFirst());
             committeeOverview.setLastMeetingDate(meetingDates.getLast());
-            committeeOverview.setMeetingDates(meetingDates);
+            List<DateAndMeetingIdsDto> dateAndMeetingIdsDtos = new ArrayList<>();
+            for(LocalDate date: dateAndMeetingIdMap.keySet()) {
+                dateAndMeetingIdsDtos.add(new DateAndMeetingIdsDto(date, dateAndMeetingIdMap.get(date)));
+            }
+            committeeOverview.setMeetings(dateAndMeetingIdsDtos);
         }
         return committeeOverview;
     }

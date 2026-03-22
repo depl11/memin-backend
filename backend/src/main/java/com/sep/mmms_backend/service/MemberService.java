@@ -41,6 +41,9 @@ public class MemberService {
         member.setFirstName(memberDto.getFirstName());
         member.setLastName(memberDto.getLastName());
         member.setTitle(memberDto.getTitle());
+        if(memberDto.getInstitution() != null && !memberDto.getInstitution().isBlank()) {
+            member.setInstitution(memberDto.getInstitution());
+        }
         if (memberDto.getPost() != null)
             member.setPost(memberDto.getPost());
         return memberRepository.save(member);
@@ -55,6 +58,10 @@ public class MemberService {
         member.setLastName(memberCreationDto.getLastName());
         member.setTitle(memberCreationDto.getTitle());
         member.setPost(memberCreationDto.getPost());
+
+        if(memberCreationDto.getInstitution() != null && !memberCreationDto.getInstitution().isBlank()) {
+            member.setInstitution(memberCreationDto.getInstitution());
+        }
         memberRepository.save(member);
     }
 

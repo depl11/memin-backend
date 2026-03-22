@@ -28,7 +28,6 @@ public class Member {
     @Column(name = "member_uuid", nullable = false, unique = true, updatable = false)
     private String uuid;
 
-
     @Column(name="member_first_name", nullable=false)
     private String firstName;
 
@@ -40,6 +39,9 @@ public class Member {
 
     @Column(name="member_title", nullable = false)
     private String title;
+
+    @Column(name="member_institution", nullable = true)
+    private String institution;
 
     @Column(name = "member_created_by", updatable = false, nullable = false)
     @CreatedBy

@@ -16,6 +16,7 @@ public class MemberSummaryDto {
     private final String firstName;
     private final String lastName;
     private final String post;
+    private final String institution;
     private String role ;
 
     public MemberSummaryDto(Member member, int committeeId) {
@@ -23,6 +24,7 @@ public class MemberSummaryDto {
         this.firstName = member.getFirstName();
         this.lastName = member.getLastName();
         this.post = member.getPost();
+        this.institution = member.getInstitution();
         for(CommitteeMembership membership: member.getMemberships() ) {
             if(membership.getId() != null
                     && membership.getId().getCommitteeId() != null
@@ -47,15 +49,14 @@ public class MemberSummaryDto {
             @JsonProperty("lastName") String lastName,
             @JsonProperty("institution") String institution,
             @JsonProperty("post") String post,
-            @JsonProperty("role") String role,
-            @JsonProperty("firstNameNepali") String firstNameNepali,
-            @JsonProperty("lastNameNepali") String lastNameNepali
+            @JsonProperty("role") String role
     ) {
         this.memberId = memberId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.post = post;
         this.role = role;
+        this.institution = institution;
 //        this.firstNameNepali = firstNameNepali;
 //        this.lastNameNepali = lastNameNepali;
     }

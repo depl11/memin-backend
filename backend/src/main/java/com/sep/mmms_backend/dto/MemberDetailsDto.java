@@ -10,6 +10,7 @@ public class MemberDetailsDto {
     private final String lastName;
     private final String post;
     private final String title;
+    private final String institution;
 
     public MemberDetailsDto(Member member) {
         this.memberId = member.getId();
@@ -17,5 +18,6 @@ public class MemberDetailsDto {
         this.lastName = member.getLastName();
         this.post = member.getPost();
         this.title = member.getTitle();
+        this.institution = member.getInstitution();
     }
 }
