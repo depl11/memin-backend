@@ -86,7 +86,7 @@ public class MeetingMinutePreparationService {
 
         memberships = committee.getSortedMemberships().stream().map(membership -> {
             Member member = membership.getMember();
-            String fullName = member.getPost() + " " + member.getFirstName() + " " + member.getLastName();
+            String fullName = getFullNameOfParticipant(member);
             return new CommitteeMembershipDto(fullName, membership.getRole());
         }).collect(Collectors.toCollection(ArrayList::new));
 
@@ -108,9 +108,11 @@ public class MeetingMinutePreparationService {
     }
 
     private String getFullNameOfParticipant(Member member) {
-        String fullname =  member.getPost() + " " + member.getFirstName() + " " + member.getLastName();
-        if(member.getTitle() != null && !member.getTitle().isBlank()) {
-           fullname = fullname + ", " + member.getTitle();
+        String fullname =  member.getTitle() + " " + member.getFirstName() + " " + member.getLastName();
+        if(member.getPost() != null && !member.getPost().isBlank()) {
+           fullname = fullname + ", " + member.getPost();
+        } else if(member.getInstitution() != null && !member.getInstitution().isBlank()) {
+            fullname = fullname + ", " + member.getInstitution();
         }
         return fullname;
     }
@@ -172,7 +174,7 @@ public class MeetingMinutePreparationService {
 
 
     private String getCoordinatorFullName(Committee committee) {
-        return committee.getCoordinator().getPost() + " " + committee.getCoordinator().getFirstName() + " " + committee.getCoordinator().getLastName();
+        return committee.getCoordinator().getTitle() + " " + committee.getCoordinator().getFirstName() + " " + committee.getCoordinator().getLastName();
     }
 
 

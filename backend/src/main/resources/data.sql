@@ -2,7 +2,7 @@ INSERT INTO app_users (username, password, email, firstname, lastname)
 VALUES ('username', '{noop}password', 'username@gmail.com', 'admin', 'admin'),
        ('not_username', '{noop}password', 'username@gmail.com', 'admin', 'admin');
 
-INSERT INTO members (member_post, member_title,
+INSERT INTO members (member_title, member_post,
                      member_created_by, member_created_date, member_modified_by, member_modified_date, member_uuid,
                      member_first_name, member_last_name)
 VALUES ('प्रा.', 'Campus Cheif', 'username', '2025-07-04', 'username', '2025-07-04', UUID(), 'हरि', 'बहादुर'),
@@ -11,7 +11,7 @@ VALUES ('प्रा.', 'Campus Cheif', 'username', '2025-07-04', 'username', '
        ('प्रा.', 'MSc Environmental Science', 'username', '2025-07-07', 'username', '2025-07-07', UUID(), 'सुनिता',
         'महार्जन'),
        ('डा.', 'PhD Civil Engineering', 'username', '2025-07-12', 'username', '2025-07-12', UUID(), 'कमल', 'पाण्डे'),
-       ('प्रा.', 'MBS', 'username', '2025-07-13', 'username', '2025-07-13', UUID(), 'दीपा', 'गुरुङ'),
+       ('प्रा.', 'MBBS', 'username', '2025-07-13', 'username', '2025-07-13', UUID(), 'दीपा', 'गुरुङ'),
        ('प्रा.', 'MSc Computer Science', 'username', '2025-07-14', 'username', '2025-07-14', UUID(), 'नविन', 'तामाङ'),
        ('डा.', 'MA Sociology', 'username', '2025-07-15', 'username', '2025-07-15', UUID(), 'अनिता', 'श्रेष्ठ'),
        ('Dr.', 'BSc CSIT', 'username', '2025-07-16', 'username', '2025-07-16', UUID(), 'Ramesh', 'Karki'),
