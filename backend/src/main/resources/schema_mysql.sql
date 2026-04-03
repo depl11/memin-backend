@@ -25,8 +25,6 @@ CREATE TABLE IF NOT EXISTS members (
     member_modified_date DATE NOT NULL
     ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-ALTER TABLE members
-    ADD COLUMN member_institution VARCHAR(255);
 
 CREATE TABLE IF NOT EXISTS committees (
                                           committee_id INT AUTO_INCREMENT PRIMARY KEY,
